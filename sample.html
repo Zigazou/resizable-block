@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Frédéric Bisson" />    
+    <title>Resizable block example</title>
+    <style>
+      /* The following declarations are mandatory for resizable blocks */
+      x-resizable {
+        display: block;
+        overflow: hidden;
+      }
+
+      x-resizable-ruler {
+        display: block;
+        min-height: 0.5em;
+        cursor: row-resize;
+      }
+
+      .x-resizable-block { overflow-y: scroll; }
+
+      /* Cosmetic styling */
+      x-resizable {
+        margin: 1em 2em;
+        top: 0;
+        height: 40em;
+        background-color: lightpink;
+      }
+
+      x-resizable-ruler {
+        border-top: 0.1em solid white;
+        border-bottom: 0.1em solid black;
+        text-align: center;
+        background-color: #DDDDDD;
+      }
+
+      x-resizable-ruler::before { content: "═"; }
+
+      body > div {
+        margin: 1em auto;
+        max-width: 80em;
+      }
+
+      .first-block {
+        background-color: yellow;
+      }
+
+      .second-block {
+        background-color: lightgreen;
+      }
+
+      .third-block {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+
+  <body role="document">
+    <div>
+      <h1>Resizable block example</h1>
+
+      <x-resizable data-sizes="0.2,0.2,0.6">
+        <div class="first-block">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non enim ac tellus pellentesque venenatis eget et quam. Duis tempus nulla sed magna commodo, vitae egestas mi luctus. Nullam rutrum felis nisl, nec euismod ex ultricies vitae. Proin semper volutpat nulla, id rhoncus erat euismod mattis. Sed congue scelerisque viverra. Vestibulum ac auctor enim. Fusce bibendum pulvinar quam non varius. Proin eget pharetra est, aliquet aliquam magna. Pellentesque egestas laoreet sem, ut posuere erat lacinia a. Aenean luctus arcu ac sapien cursus, laoreet luctus purus placerat. Aliquam tempor egestas magna, non tempus risus imperdiet sit amet. Etiam nibh augue, rutrum vitae sodales sit amet, ullamcorper nec arcu. In ac nisi pretium, dictum nibh ut, luctus urna. Aliquam erat volutpat.</p>
+          <p>Vestibulum consectetur lectus turpis, aliquet aliquet sem ullamcorper pulvinar. Aenean mattis enim non felis fringilla finibus. Duis et neque nec erat laoreet sagittis. Nulla imperdiet dignissim quam, vitae eleifend velit vehicula in. Quisque ornare, massa egestas ultrices rhoncus, sem turpis posuere leo, ut faucibus metus ex eget libero. Maecenas consectetur nibh at dolor sodales vulputate. Proin eu tellus vitae ex euismod dapibus eu sit amet arcu. Integer porttitor porttitor massa, in dictum ex rutrum non.</p>
+          <p>Nullam egestas, metus ac sodales interdum, felis tortor viverra mauris, id tincidunt nisl est sit amet eros. Suspendisse neque metus, dignissim ut lorem id, ornare aliquam lorem. Praesent pharetra enim ac placerat molestie. Morbi in aliquam nisl, nec rhoncus nulla. Nulla luctus euismod quam, id congue mi suscipit eget. Curabitur commodo fermentum ante id iaculis. Fusce fermentum, est et congue scelerisque, arcu nisi lobortis ligula, vitae pharetra lacus sapien vel massa. Vestibulum porttitor tristique nunc id sodales. Integer lobortis ex id ex pharetra finibus.</p>
+          <p>Nam pulvinar arcu eget eros mollis imperdiet. Vivamus ultricies sodales tellus eu mollis. Phasellus tincidunt ligula ut ornare aliquam. Vivamus id feugiat nisl. Pellentesque venenatis aliquam eros. In imperdiet gravida tincidunt. Pellentesque vitae sem eu augue mollis rutrum. Vivamus odio turpis, eleifend id sollicitudin sit amet, porta ut odio. Aliquam iaculis mi sem, sit amet finibus nibh commodo ac. Donec a ultrices urna, ac imperdiet nibh. In hac habitasse platea dictumst. Donec placerat ac orci sit amet cursus. Mauris nec nulla augue. Mauris nulla dui, dapibus nec orci id, porttitor ultricies sapien. Etiam vitae quam et dolor cursus consequat.</p>
+          <p>Nunc quis pellentesque mauris. Quisque a nunc nec purus finibus congue. Aenean dictum lacus sit amet eros rutrum, sit amet tincidunt augue posuere. Ut quis justo commodo, sollicitudin nisi quis, maximus mi. Pellentesque efficitur risus ut porta porttitor. Curabitur tellus magna, iaculis a placerat a, gravida porta ligula. Phasellus vitae lacus metus. Praesent venenatis velit at turpis pharetra feugiat.</p>
+        </div>
+        <div class="second-block">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non enim ac tellus pellentesque venenatis eget et quam. Duis tempus nulla sed magna commodo, vitae egestas mi luctus. Nullam rutrum felis nisl, nec euismod ex ultricies vitae. Proin semper volutpat nulla, id rhoncus erat euismod mattis. Sed congue scelerisque viverra. Vestibulum ac auctor enim. Fusce bibendum pulvinar quam non varius. Proin eget pharetra est, aliquet aliquam magna. Pellentesque egestas laoreet sem, ut posuere erat lacinia a. Aenean luctus arcu ac sapien cursus, laoreet luctus purus placerat. Aliquam tempor egestas magna, non tempus risus imperdiet sit amet. Etiam nibh augue, rutrum vitae sodales sit amet, ullamcorper nec arcu. In ac nisi pretium, dictum nibh ut, luctus urna. Aliquam erat volutpat.</p>
+          <p>Vestibulum consectetur lectus turpis, aliquet aliquet sem ullamcorper pulvinar. Aenean mattis enim non felis fringilla finibus. Duis et neque nec erat laoreet sagittis. Nulla imperdiet dignissim quam, vitae eleifend velit vehicula in. Quisque ornare, massa egestas ultrices rhoncus, sem turpis posuere leo, ut faucibus metus ex eget libero. Maecenas consectetur nibh at dolor sodales vulputate. Proin eu tellus vitae ex euismod dapibus eu sit amet arcu. Integer porttitor porttitor massa, in dictum ex rutrum non.</p>
+          <p>Nullam egestas, metus ac sodales interdum, felis tortor viverra mauris, id tincidunt nisl est sit amet eros. Suspendisse neque metus, dignissim ut lorem id, ornare aliquam lorem. Praesent pharetra enim ac placerat molestie. Morbi in aliquam nisl, nec rhoncus nulla. Nulla luctus euismod quam, id congue mi suscipit eget. Curabitur commodo fermentum ante id iaculis. Fusce fermentum, est et congue scelerisque, arcu nisi lobortis ligula, vitae pharetra lacus sapien vel massa. Vestibulum porttitor tristique nunc id sodales. Integer lobortis ex id ex pharetra finibus.</p>
+          <p>Nam pulvinar arcu eget eros mollis imperdiet. Vivamus ultricies sodales tellus eu mollis. Phasellus tincidunt ligula ut ornare aliquam. Vivamus id feugiat nisl. Pellentesque venenatis aliquam eros. In imperdiet gravida tincidunt. Pellentesque vitae sem eu augue mollis rutrum. Vivamus odio turpis, eleifend id sollicitudin sit amet, porta ut odio. Aliquam iaculis mi sem, sit amet finibus nibh commodo ac. Donec a ultrices urna, ac imperdiet nibh. In hac habitasse platea dictumst. Donec placerat ac orci sit amet cursus. Mauris nec nulla augue. Mauris nulla dui, dapibus nec orci id, porttitor ultricies sapien. Etiam vitae quam et dolor cursus consequat.</p>
+          <p>Nunc quis pellentesque mauris. Quisque a nunc nec purus finibus congue. Aenean dictum lacus sit amet eros rutrum, sit amet tincidunt augue posuere. Ut quis justo commodo, sollicitudin nisi quis, maximus mi. Pellentesque efficitur risus ut porta porttitor. Curabitur tellus magna, iaculis a placerat a, gravida porta ligula. Phasellus vitae lacus metus. Praesent venenatis velit at turpis pharetra feugiat.</p>
+        </div>
+        <div class="third-block">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non enim ac tellus pellentesque venenatis eget et quam. Duis tempus nulla sed magna commodo, vitae egestas mi luctus. Nullam rutrum felis nisl, nec euismod ex ultricies vitae. Proin semper volutpat nulla, id rhoncus erat euismod mattis. Sed congue scelerisque viverra. Vestibulum ac auctor enim. Fusce bibendum pulvinar quam non varius. Proin eget pharetra est, aliquet aliquam magna. Pellentesque egestas laoreet sem, ut posuere erat lacinia a. Aenean luctus arcu ac sapien cursus, laoreet luctus purus placerat. Aliquam tempor egestas magna, non tempus risus imperdiet sit amet. Etiam nibh augue, rutrum vitae sodales sit amet, ullamcorper nec arcu. In ac nisi pretium, dictum nibh ut, luctus urna. Aliquam erat volutpat.</p>
+          <p>Vestibulum consectetur lectus turpis, aliquet aliquet sem ullamcorper pulvinar. Aenean mattis enim non felis fringilla finibus. Duis et neque nec erat laoreet sagittis. Nulla imperdiet dignissim quam, vitae eleifend velit vehicula in. Quisque ornare, massa egestas ultrices rhoncus, sem turpis posuere leo, ut faucibus metus ex eget libero. Maecenas consectetur nibh at dolor sodales vulputate. Proin eu tellus vitae ex euismod dapibus eu sit amet arcu. Integer porttitor porttitor massa, in dictum ex rutrum non.</p>
+          <p>Nullam egestas, metus ac sodales interdum, felis tortor viverra mauris, id tincidunt nisl est sit amet eros. Suspendisse neque metus, dignissim ut lorem id, ornare aliquam lorem. Praesent pharetra enim ac placerat molestie. Morbi in aliquam nisl, nec rhoncus nulla. Nulla luctus euismod quam, id congue mi suscipit eget. Curabitur commodo fermentum ante id iaculis. Fusce fermentum, est et congue scelerisque, arcu nisi lobortis ligula, vitae pharetra lacus sapien vel massa. Vestibulum porttitor tristique nunc id sodales. Integer lobortis ex id ex pharetra finibus.</p>
+          <p>Nam pulvinar arcu eget eros mollis imperdiet. Vivamus ultricies sodales tellus eu mollis. Phasellus tincidunt ligula ut ornare aliquam. Vivamus id feugiat nisl. Pellentesque venenatis aliquam eros. In imperdiet gravida tincidunt. Pellentesque vitae sem eu augue mollis rutrum. Vivamus odio turpis, eleifend id sollicitudin sit amet, porta ut odio. Aliquam iaculis mi sem, sit amet finibus nibh commodo ac. Donec a ultrices urna, ac imperdiet nibh. In hac habitasse platea dictumst. Donec placerat ac orci sit amet cursus. Mauris nec nulla augue. Mauris nulla dui, dapibus nec orci id, porttitor ultricies sapien. Etiam vitae quam et dolor cursus consequat.</p>
+          <p>Nunc quis pellentesque mauris. Quisque a nunc nec purus finibus congue. Aenean dictum lacus sit amet eros rutrum, sit amet tincidunt augue posuere. Ut quis justo commodo, sollicitudin nisi quis, maximus mi. Pellentesque efficitur risus ut porta porttitor. Curabitur tellus magna, iaculis a placerat a, gravida porta ligula. Phasellus vitae lacus metus. Praesent venenatis velit at turpis pharetra feugiat.</p>
+        </div>
+      </x-resizable>
+    </div>
+
+    <script src="resizable-block.js"></script>
+    <script>ResizableBlock.init()</script>
+  </body>
+</html>
